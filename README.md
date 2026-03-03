@@ -5,6 +5,8 @@
 ## Description
 This project is a classic Tetris game implemented in .NET 9.0 using @DualBrain's `vbPixelGameEngine`, with the Super Rotation System (SRS) as an authentic gameplay mechanic. The game features a modern scoring system with line clears, T-spins, soft-drops and hard-drops.
 
+NOTE: Background music used in this game is sourced from the SEGA System-B version (the arcade platform) of Tetris, and the Game Over sound effect is sourced from the GameBoy version of the same game.
+
 ## Controls
 | Key | Action |
 | --- | --- |

@@ -4,12 +4,22 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>VBPGE_Tetris_Game</RootNamespace>
     <TargetFramework>net9.0</TargetFramework>
+    <PublishSingleFile>true</PublishSingleFile>
   </PropertyGroup>
 
   <ItemGroup>
     <Reference Include="VbPixelGameEngine">
       <HintPath>vbPixelGameEngine.dll</HintPath>
     </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="main_theme.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="game_over.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
   <ItemGroup>

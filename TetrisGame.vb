@@ -165,7 +165,7 @@ Public NotInheritable Class TetrisGame
 
     Private Sub MoveDown()
         If m_gameState <> GameState.Playing Then Exit Sub
-        If GetKey(Key.DOWN).Pressed Then m_score += 1
+        If GetKey(Key.DOWN).Pressed AndAlso Not m_isPieceLocking Then m_score += 1
 
         Dim updatedPos As New Vi2d(m_currentPos.x, m_currentPos.y + 1)
         If CheckCollision(updatedPos, CurrentShape) Then
@@ -179,9 +179,7 @@ Public NotInheritable Class TetrisGame
                 m_lockTimer = 0.0F
             Else
                 m_lockTimer += m_accumulatedTime - m_lastFallTime
-                If m_lockTimer >= LOCK_DELAY Then
-                    LockPiece()
-                End If
+                If m_lockTimer >= LOCK_DELAY Then LockPiece()
             End If
         End If
     End Sub
