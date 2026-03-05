@@ -22,7 +22,7 @@ Public Structure BlockDetails
     End Sub
 End Structure
 
-Public Module Tetramino
+Public Module Tetromino
     Public ReadOnly Property BlockMap As New Dictionary(Of Char, BlockDetails) From {
         {"I"c, New BlockDetails("I"c, Presets.Cyan, shape:={{1, 1, 1, 1}}, wallKick:={
             New Vi2d(-1, 0), New Vi2d(-1, -1), New Vi2d(0, 2), New Vi2d(-1, 2)})},
