@@ -187,7 +187,8 @@ Public NotInheritable Class TetrisGame
     Private Sub Rotate(clockwise As Boolean)
         If m_gameState <> GameState.Playing Then Exit Sub
         Dim oldRotation = m_currentRotation
-        m_currentRotation = (m_currentRotation + If(clockwise, 1, 3)) Mod 4
+        ' Key fix: Rotation now consistent with the intended design
+        m_currentRotation = (m_currentRotation + If(clockwise, 3, 1)) Mod 4
         Dim newShape = CurrentShape
 
         If Not CheckCollision(m_currentPos, newShape) Then
