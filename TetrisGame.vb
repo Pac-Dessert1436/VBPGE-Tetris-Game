@@ -1,5 +1,3 @@
-Option Strict On
-Option Infer On
 Imports VbPixelGameEngine
 Imports System.MathF
 
@@ -193,7 +191,7 @@ Public NotInheritable Class TetrisGame
 
         If Not CheckCollision(m_currentPos, newShape) Then
             For Each offset In m_currentPiece.wallKick
-                Dim newPos = New Vi2d(m_currentPos.x + offset.x, m_currentPos.y + offset.y)
+                Dim newPos As New Vi2d(m_currentPos.x + offset.x, m_currentPos.y + offset.y)
                 If CheckCollision(newPos, newShape) Then
                     m_currentPos = newPos
                     Exit Sub
@@ -207,7 +205,7 @@ Public NotInheritable Class TetrisGame
         If m_gameState <> GameState.Playing Then Exit Sub
         While CheckCollision(m_currentPos + New Vi2d(0, 1), CurrentShape)
             m_currentPos.y += 1
-            m_score += 2
+            m_score += 1  ' Hard-drop score identical to soft-drop
         End While
         LockPiece()
     End Sub

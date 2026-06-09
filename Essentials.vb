@@ -1,5 +1,3 @@
-Option Strict On
-Option Infer On
 Imports NAudio.Wave
 Imports VbPixelGameEngine
 
